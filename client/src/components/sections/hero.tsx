@@ -1,8 +1,39 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Rocket, CheckCircle, Trophy } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
+  // Typed text effect for multiple words
+  const words = ["Power", "Success", "Growth", ];
+  const [typedText, setTypedText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let typingSpeed = 120;
+    let deletingSpeed = 50;
+    let pause = 1200;
+    let currentWord = words[wordIndex];
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+
+    if (!isDeleting && typedText.length < currentWord.length) {
+      timeout = setTimeout(() => {
+        setTypedText(currentWord.slice(0, typedText.length + 1));
+      }, typingSpeed);
+    } else if (isDeleting && typedText.length > 0) {
+      timeout = setTimeout(() => {
+        setTypedText(currentWord.slice(0, typedText.length - 1));
+      }, deletingSpeed);
+    } else if (!isDeleting && typedText.length === currentWord.length) {
+      timeout = setTimeout(() => setIsDeleting(true), pause);
+    } else if (isDeleting && typedText.length === 0) {
+      setIsDeleting(false);
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }
+    return () => clearTimeout(timeout);
+  }, [typedText, isDeleting, wordIndex, words]);
+
   return (
     <section id="home" className="relative bg-white hero-pattern py-16 lg:py-24 overflow-hidden">
       {/* Enhanced Background Animations */}
@@ -24,8 +55,8 @@ export default function Hero() {
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 leading-tight">
                 Where Learning
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"> Becomes </span>
-                Excellence
+                <span className=" bg-clip-text "> Becomes </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">{typedText}<span className="border-r-2 border-accent ml-0.5 fast-blink-cursor" style={{ borderRightWidth: 4, height: '1.2em', display: 'inline-block', verticalAlign: 'middle' }} /></span>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed">
                 We make students fall in love with learning before the pressure begins.
@@ -94,10 +125,9 @@ export default function Hero() {
             {/* Floating Cards - now visible on all screens and with smooth floating animation */}
             <motion.div
               className="absolute -top-6 -left-2 sm:-left-6 bg-white rounded-xl shadow-lg p-4 max-w-xs border-2 border-green-400"
-              initial={false}
+              initial={true}
               animate={{
                 y: [0, -8, 0],
-                scale: [1, 1.02, 1],
                 boxShadow: [
                   '0 6px 16px rgba(0, 0, 0, 0.06)',
                   '0 10px 20px rgba(0, 0, 0, 0.08)',
@@ -105,10 +135,11 @@ export default function Hero() {
                 ],
               }}
               transition={{
-                duration: 1.2,
+                duration: 2,
                 ease: "easeInOut",
                 repeat: Infinity,
-                repeatType: "loop"
+                repeatType: "loop",
+                transform: "translateY(0) translateY(-10px)"
               }}
 
             >
@@ -125,10 +156,9 @@ export default function Hero() {
 
             <motion.div
               className="absolute -bottom-6 -right-2 sm:-right-6 bg-white rounded-xl shadow-lg p-4 max-w-xs border-2 border-blue-400"
-              initial={false}
+              initial={true}
               animate={{
                 y: [0, -8, 0],
-                scale: [1, 1.02, 1],
                 boxShadow: [
                   '0 6px 16px rgba(0, 0, 0, 0.06)',
                   '0 10px 20px rgba(0, 0, 0, 0.08)',
@@ -136,10 +166,12 @@ export default function Hero() {
                 ],
               }}
               transition={{
-                duration: 1.2,
+                duration: 2,
                 ease: "easeInOut",
                 repeat: Infinity,
-                repeatType: "loop"
+                repeatType: "loop",
+                transform: "translateY(0) translateY(-10px)"
+
               }}
 
             >
@@ -156,6 +188,15 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+      <style>{`
+  .fast-blink-cursor {
+    animation: blink-cursor 0.8s steps(1) infinite;
+  }
+  @keyframes blink-cursor {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0; }
+  }
+`}</style>
     </section>
   );
 }

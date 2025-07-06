@@ -72,7 +72,7 @@ export default function LearningPath() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="programs" className="py-16 lg:py-24 bg-slate-50" ref={ref}>
+    <section id="programs" className="py-16 lg:py-24 bg-slate-100" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 
