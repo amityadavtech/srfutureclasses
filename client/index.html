@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>S.R. Fuutre Classes - Premium Coaching Institute | Classes 6-12</title>
+    <meta name="description" content="Premium coaching institute for Classes 6-12. Expert teaching, personalized attention, and proven results. Build strong foundations to advanced mastery.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="S.R. Fuutre Classes - Premium Coaching Institute">
+    <meta property="og:description" content="Transform your academic journey with S.R. Fuutre Classes. Expert coaching for Classes 6-12 with proven results.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
+  </head>
+  <body style="margin: 0; padding: 0; position: relative;">
+    <!-- Initial Preloader -->
+    <div id="initial-preloader" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      flex-direction: column;
+      transition: opacity 0.3s ease-in-out;
+    ">
+      <div style="
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(217, 91%, 45%) 100%);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        animation: spin 2s linear infinite;
+      ">
+        <img src="/logo.jpeg" alt="S.R. Future Classes Logo" style="width: 48px; height: 48px; object-fit: contain; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);" />
+      </div>
+      <h1 style="
+        font-family: 'Poppins', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #334155;
+        margin-bottom: 8px;
+      ">S.R. Future Classes</h1>
+      <p style="
+        font-family: 'Poppins', sans-serif;
+        color: #64748b;
+        margin-bottom: 32px;
+      ">Premium Coaching Institute</p>
+      <div style="
+        width: 200px;
+        height: 4px;
+        background: #e2e8f0;
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+      ">
+        <div style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 40%;
+          background: linear-gradient(90deg, transparent, hsl(217, 91%, 60%), transparent);
+          border-radius: 2px;
+          animation: shimmer 2s ease-in-out infinite;
+        "></div>
+      </div>
+      <p style="
+        font-family: 'Poppins', sans-serif;
+        color: #94a3b8;
+        font-size: 14px;
+        margin-top: 16px;
+      ">Loading your learning journey...</p>
+    </div>
+
+    <style>
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes shimmer {
+        0% { transform: translateX(-200px); }
+        100% { transform: translateX(200px); }
+      }
+    </style>
+
+    <div id="root"></div>
+    
+    <script>
+      // Simple scroll to top and preloader management
+      window.addEventListener('load', function() {
+        window.scrollTo(0, 0);
+        setTimeout(function() {
+          const initialPreloader = document.getElementById('initial-preloader');
+          if (initialPreloader) {
+            initialPreloader.style.transition = 'opacity 0.5s ease-out';
+            initialPreloader.style.opacity = '0';
+            setTimeout(function() {
+              initialPreloader.style.display = 'none';
+            }, 500);
+          }
+        }, 800);
+      });
+
+      // Ensure page starts from top
+      document.addEventListener('DOMContentLoaded', function() {
+        window.scrollTo(0, 0);
+      });
+    </script>
+    
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
+    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+  </body>
+</html>
