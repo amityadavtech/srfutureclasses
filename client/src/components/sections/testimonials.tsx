@@ -7,7 +7,7 @@ const testimonials = [
 		id: 1,
 		text: "U transformed my sons's approach to learning. He went from struggling with Math to scoring 94% in Class 10 boards. The teachers here truly care about each student's progress.",
 		author: "Shivansh",
-		relation: "Student (Class 10)",
+		relation: "Student (Class 11)",
 		image:
 			"/shivansh.jpg",
 	},
@@ -15,7 +15,7 @@ const testimonials = [
 		id: 2,
 		text: "The foundation I built here in Classes 6-8 helped me excel throughout school. Now in Class 11, I'm confident about both boards and JEE preparation. Thank you U!",
 		author: "Abhinav",
-		relation: "Student (Class 10)",
+		relation: "Student (Class 11)",
 		image:
 			"/abhinav.jpg",
 	},
