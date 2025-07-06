@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   // Typed text effect for multiple words
-  const words = ["Power", "Success", "Growth", ];
+  const words = ["Power", "Fun", "Growth", ];
   const [typedText, setTypedText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);

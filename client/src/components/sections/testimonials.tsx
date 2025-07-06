@@ -6,7 +6,7 @@ const testimonials = [
 	{
 		id: 1,
 		text: "U transformed my sons's approach to learning. He went from struggling with Math to scoring 94% in Class 10 boards. The teachers here truly care about each student's progress.",
-		author: "Shivansh Yadav",
+		author: "Shivansh",
 		relation: "Student (Class 10)",
 		image:
 			"/shivansh.jpg",
@@ -14,7 +14,7 @@ const testimonials = [
 	{
 		id: 2,
 		text: "The foundation I built here in Classes 6-8 helped me excel throughout school. Now in Class 11, I'm confident about both boards and JEE preparation. Thank you U!",
-		author: "Abhinav Verma",
+		author: "Abhinav",
 		relation: "Student (Class 10)",
 		image:
 			"/abhinav.jpg",
@@ -22,7 +22,7 @@ const testimonials = [
 	{
 		id: 3,
 		text: "The personalized attention and systematic approach at U made all the difference. I scored 94% in Class 10 and am now confidently tackling Class 11 concepts.",
-		author: "Chandan Shukala",
+		author: "Chandan",
 		relation: "Student (Class 11)",
 		image:
 			"/chandan.jpg",
@@ -31,15 +31,15 @@ const testimonials = [
 	{
 		id: 4,
 		text: "Before joining U, I lacked confidence in academics. But with the guidance I received here, not only did my scores improve drastically, but so did my attitude towards learning. I proudly scored 94% in my Class 10 boards!",
-		author: "Natasha Malhotra",
-		relation: "Student of a(Class 11)",
+		author: "Natasha",
+		relation: "Student (Class 11)",
 		image:
 			"/tamasha.jpeg",
 	},
 	{
 		id: 5,
 		text: "Joining U in middle school gave me a strong academic base. The techniques and concepts I learned then still help me today. As a Class 12 student aiming for JEE, I feel well-prepared and supported every step of the way.",
-		author: "Saksham Mishra",
+		author: "Saksham",
 		relation: "Student (Class 12)",
 		image:
 			"/saksham.png",
@@ -47,7 +47,7 @@ const testimonials = [
 	{
 		id: 6,
 		text: "U has been a game-changer for my education. The teachers focus on understanding rather than rote learning, which helped me in Class 10. I now tackel Class 11 with confidence and clarity.",
-		author: "Amit Yadav",
+		author: "Amit",
 		relation: "Student (Class 11)",
 		image: "/amit.png",
 	},
@@ -134,7 +134,7 @@ export default function Testimonials() {
 										<img
 											src={testimonial.image}
 											alt={`${testimonial.author} testimonial photo`}
-											className="rounded-full object-cover w-16 h-16 sm:w-20 sm:h-20"
+											className="rounded-full object-cover w-12 h-12 sm:w-18 sm:h-18"
 										/>
 
 										<div className="font-semibold text-slate-800 text-sm sm:text-base">
